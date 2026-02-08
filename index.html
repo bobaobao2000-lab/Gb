@@ -8,19 +8,17 @@
 <style>
 body {
   margin: 0;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
+  background: black;
 }
 
-/* === GIỮ TỈ LỆ 194x259 === */
+/* === FULL MÀN HÌNH === */
 .bg-container {
-  width: calc(100vh * 194 / 259);
+  width: 100vw;
   height: 100vh;
-  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMteSuKAhzuEwdlV4w50RgkBdv1bAO8XY-cTUzq6TfSAFg-alDXoZf6Z4K&s=10") no-repeat center center;
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx_nxXmDAYY82QMCTdjWje6rsZ3qVSQXvrqw&s") no-repeat center center;
   background-size: cover;
   position: relative;
 }
@@ -84,6 +82,7 @@ body {
   font-size: 20px;
   animation: fall linear infinite;
   opacity: 0.9;
+  z-index: 10;
 }
 
 @keyframes fall {
@@ -115,6 +114,8 @@ body {
   <div class="overlay">
     <div class="marquee">
       <div class="marquee-inner">
+        <div class="text">T thik mày AT ❤️</div>
+        <div class="text">T thik mày AT ❤️</div>
         <div class="text">T thik mày AT ❤️</div>
         <div class="text">T thik mày AT ❤️</div>
         <div class="text">T thik mày AT ❤️</div>
@@ -163,4 +164,5 @@ btn.onclick = () => {
 </script>
 
 </body>
-</html>
+  </html>
+  
