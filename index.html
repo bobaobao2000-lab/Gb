@@ -6,21 +6,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
+/* FIX FULL MÀN HÌNH + KHÔNG VỠ */
+html, body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
+  padding: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background: black;
 }
 
 /* === FULL MÀN HÌNH === */
 .bg-container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  inset: 0;
+
+  /* GIỮ NGUYÊN LINK BACKGROUND CỦA BẠN */
   background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8KLwSMyzujAx8NQCj08Kw_EPKYsj_rcbVDS3pW5XVCYhnwgVZdHzfSz8&s=10") no-repeat center center;
   background-size: cover;
-  position: relative;
 }
 
 /* === OVERLAY === */
@@ -28,6 +33,7 @@ body {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.35);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,8 +46,10 @@ body {
 }
 
 .marquee-inner {
-  display: inline-flex;
+  display: flex;
+  width: max-content;
   white-space: nowrap;
+  will-change: transform;
   animation: run 8s linear infinite;
 }
 
@@ -53,6 +61,7 @@ body {
   animation: color 2s linear infinite, shake 0.15s infinite;
 }
 
+/* chạy mượt hơn */
 @keyframes run {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -77,12 +86,13 @@ body {
 
 /* === TIM RƠI === */
 .heart {
-  position: absolute;
+  position: fixed;
   top: -10vh;
   font-size: 20px;
   animation: fall linear infinite;
   opacity: 0.9;
   z-index: 10;
+  pointer-events: none;
 }
 
 @keyframes fall {
@@ -114,6 +124,14 @@ body {
   <div class="overlay">
     <div class="marquee">
       <div class="marquee-inner">
+        <div class="text">T thik mày AT ❤️</div>
+        <div class="text">T thik mày AT ❤️</div>
+        <div class="text">T thik mày AT ❤️</div>
+        <div class="text">T thik mày AT ❤️</div>
+        <div class="text">T thik mày AT ❤️</div>
+        <div class="text">T thik mày AT ❤️</div>
+
+        <!-- nhân đôi để chạy mượt không bị hụt -->
         <div class="text">T thik mày AT ❤️</div>
         <div class="text">T thik mày AT ❤️</div>
         <div class="text">T thik mày AT ❤️</div>
@@ -164,6 +182,4 @@ btn.onclick = () => {
 </script>
 
 </body>
-  </html>
-  
-
+</html>
